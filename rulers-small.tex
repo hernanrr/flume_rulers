@@ -29,12 +29,16 @@
 \begin{tikzpicture}[x=1mm,line cap=rect]
 
   
-  %%%% We need 12 rulers, mirrored, for a grand total of 24 rulers. Each pair of
-  %%%% rulers will be offset 10 cm from the previous pair. 
+  %%%% We need 12 rulers, mirrored, for a grand total of 24 rulers. This script
+  %%%% produces 4 pairs of rulers, stacked 2 X 2. The output pdf can then be
+  %%%% used by the stack-rulers-small.tex file.
+
+
+  %%%% Each pair of rulers will be offset 10 cm from the previous pair.
   \foreach \k in {0,...,1}{ %%% To get the graphs stacked
     \tikzset{yshift/.expanded=\k*720mm}
   
-    \foreach \i in {0,...,1}{ %%% Ideally, this would be 11. 
+    \foreach \i in {0,...,1}{ %%% Ideally, this would be 5. It runs out of memory. 
     \tikzset{xshift/.expanded=\i*100mm}
 
     %%%% Draw the red millimeter tick marks.
@@ -85,7 +89,7 @@
     %%%% ------------------------------ REVERSED RULERS
 
 
-\foreach \i in {0,...,1}{ %%% %Ideally, this would be 11. 
+\foreach \i in {0,...,1}{ %%% %Ideally, this would be 5. It runs out of memory. 
   % \tikzset{yshift/.expanded=\i0cm}
   \tikzset{xshift/.expanded=\i*100mm}
   
